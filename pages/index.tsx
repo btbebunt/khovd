@@ -54,7 +54,7 @@ export default function Home() {
                 <meta property="og:title" content="Ховд Экспресс карго" />
                 <meta property="og:description" content="Ховд Экспресс карго нь Бүгд Найрамдах Хятад Ард Улсын бүх хотуудаас бүх төрлийн барааг Ховд аймаг руу маш хурдан шуурхай, аюулгүй тээвэрлэх үйлчилгээ үзүүлдэг Карго юм." />
                 <meta property="og:image" content="/logo1.png" />
-                <meta property="og:url" content="https://nisekhcargo.vercel.app/" />
+                <meta property="og:url" content="https://khovd.vercel.app/" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Ховд Экспресс карго" />
                 <meta name="twitter:description" content="Ховд Экспресс карго нь Бүгд Найрамдах Хятад Ард Улсын бүх хотуудаас бүх төрлийн барааг Ховд аймаг руу маш хурдан шуурхай, аюулгүй тээвэрлэх үйлчилгээ үзүүлдэг Карго юм." />
