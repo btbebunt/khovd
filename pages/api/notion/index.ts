@@ -10,10 +10,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   async function getNotion() {
-    const notion = new Client({ auth: "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" });
+    const notion = new Client({ auth: "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" });
     try {
       const response = await notion.databases.query({
-        database_id: "1895931924ba802eb833d19cd18a04ea", // Replace with your database ID
+        database_id: "1898625657d9809495c1f791220bc07d", // Replace with your database ID
         filter: {
           and: [
             {

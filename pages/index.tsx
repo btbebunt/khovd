@@ -27,10 +27,10 @@ export default function Home() {
             const result = await response.json();
 
             const mainPriorityResults = result.filter((item: any) =>
-                item.properties?.Status?.status?.name === 'Улаанбаатарт ирсэн'
+                item.properties?.Status?.status?.name === 'Ховдод ирсэн'
             );
             const otherResults = result.filter((item: any) =>
-                !['Улаанбаатарт ирсэн', 'Эрээн-> Улаанбаатар', 'Эрээнд ирсэн'].includes(item.properties?.Status?.status?.name)
+                !['Ховдод ирсэн', 'Эрээн-> Улаанбаатар', 'Эрээнд ирсэн'].includes(item.properties?.Status?.status?.name)
             );
 
             setResults([...mainPriorityResults, ...otherResults]);
@@ -46,18 +46,18 @@ export default function Home() {
             {/* SEO 정보 추가 */}
             <Head>
                 <meta charSet="UTF-8" />
-                <title>"Нисэх карго" Тээвэр зууч</title>
-                <meta name="description" content="'Нисэх карго' нь БНХАУ-н бүх хотуудаас бүх төрлийн барааг Улаанбаатар хот руу хурдан, аюулгүй тээвэрлэх үйлчилгээ үзүүлдэг ба тээвэр зуучийн салбарт 10 гаруй жилийн туршлагтай Хятад улсын тээврийн Амгалан карго компани-тай хамтран ажиллаж байна." />
-                <meta name="keywords" content="Нисэх карго" />
-                <meta name="author" content="Нисэх карго" />
+                <title>Ховд Экспресс карго</title>
+                <meta name="description" content="Ховд Экспресс карго нь Бүгд Найрамдах Хятад Ард Улсын бүх хотуудаас бүх төрлийн барааг Ховд аймаг руу маш хурдан шуурхай, аюулгүй тээвэрлэх үйлчилгээ үзүүлдэг Карго юм." />
+                <meta name="keywords" content="Ховд Экспресс карго" />
+                <meta name="author" content="Ховд Экспресс карго" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta property="og:title" content="Нисэх карго" />
-                <meta property="og:description" content="'Нисэх карго' нь БНХАУ-н бүх хотуудаас бүх төрлийн барааг Улаанбаатар хот руу хурдан, аюулгүй тээвэрлэх үйлчилгээ үзүүлдэг ба тээвэр зуучийн салбарт 10 гаруй жилийн туршлагтай Хятад улсын тээврийн Амгалан карго компани-тай хамтран ажиллаж байна." />
+                <meta property="og:title" content="Ховд Экспресс карго" />
+                <meta property="og:description" content="Ховд Экспресс карго нь Бүгд Найрамдах Хятад Ард Улсын бүх хотуудаас бүх төрлийн барааг Ховд аймаг руу маш хурдан шуурхай, аюулгүй тээвэрлэх үйлчилгээ үзүүлдэг Карго юм." />
                 <meta property="og:image" content="/logo1.png" />
                 <meta property="og:url" content="https://nisekhcargo.vercel.app/" />
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Нисэх карго" />
-                <meta name="twitter:description" content="'Нисэх карго' нь БНХАУ-н бүх хотуудаас бүх төрлийн барааг Улаанбаатар хот руу хурдан, аюулгүй тээвэрлэх үйлчилгээ үзүүлдэг ба тээвэр зуучийн салбарт 10 гаруй жилийн туршлагтай Хятад улсын тээврийн Амгалан карго компани-тай хамтран ажиллаж байна." />
+                <meta name="twitter:title" content="Ховд Экспресс карго" />
+                <meta name="twitter:description" content="Ховд Экспресс карго нь Бүгд Найрамдах Хятад Ард Улсын бүх хотуудаас бүх төрлийн барааг Ховд аймаг руу маш хурдан шуурхай, аюулгүй тээвэрлэх үйлчилгээ үзүүлдэг Карго юм." />
                 <meta name="twitter:image" content="/logo1.png" />
             </Head>
 
@@ -68,13 +68,13 @@ export default function Home() {
                         <Image
                             src="/logo1.png"
                             alt="Uni Cargo Logo"
-                            width={180}
-                            height={180}
+                            width={100}
+                            height={100}
                             priority
-                            className="mt-5"
+                            fetchPriority="high"
                         />
 
-                        <p className="mt-6"> Ачаа шалгах</p>
+                        <p className="ml-6"> Ачаа шалгах</p>
                     </div>
 
                     {/* Search Form */}
@@ -85,7 +85,7 @@ export default function Home() {
                                     type="submit"
                                     disabled={loading}
                                     className={`!absolute right-0 top-0 h-full select-none rounded-[100px] py-1 px-6 text-center align-middle text-md text-white transition-all focus:opacity-[0.85] outline-none border-0 
-                                    ${loading ? 'bg-[#FDA600]' : 'bg-[#FDA600] hover:bg-[#FDA60099]'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+                                    ${loading ? 'bg-[#3B82F6]' : 'bg-[#3B82F6] hover:bg-[#3B82F699]'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
                                 >
                                     {loading ? 'Хайж байна...' : 'Хайх'}
                                 </button>
@@ -94,7 +94,7 @@ export default function Home() {
                                     autoComplete="off"
                                     type="text"
                                     {...register('query', { required: '*Заавал утга оруулна уу.' })}
-                                    className="text-[#ffffff] text-md py-3 px-4 w-full rounded-[100px] bg-black pr-12 font-normal border border-[#FDA600] border-solid focus:outline-none"
+                                    className="text-[#ffffff] text-md py-3 px-4 w-full rounded-[100px] bg-black pr-12 font-normal border border-[#3B82F6] border-solid focus:outline-none"
                                     placeholder="Track код оруулна уу."
                                 />
                             </div>
@@ -102,35 +102,25 @@ export default function Home() {
                     </form>
                     {!hasSearched && (
                         <div className="bg-[#000000] text-[#ffffff] p-6 rounded-md shadow-md max-w-[756px] mx-auto">
-                            <h2 className=" flex items-center justify-center text-xl font-bold mb-4">"Нисэх карго" Тээвэр зууч</h2>
+                            <h2 className=" flex items-center justify-center text-xl font-bold mb-4">Ховд Экспресс карго</h2>
 
                             <p className="mb-2">
-                            'Нисэх карго' нь БНХАУ-н бүх хотуудаас бүх төрлийн барааг Улаанбаатар хот руу хурдан, аюулгүй тээвэрлэх үйлчилгээ үзүүлдэг ба тээвэр зуучийн салбарт 10 гаруй жилийн туршлагтай Хятад улсын тээврийн "Амгалан карго" компани-тай хамтран ажиллаж байна.
+                            Ховд Экспресс карго нь Бүгд Найрамдах Хятад Ард Улсын бүх хотуудаас бүх төрлийн барааг Ховд аймаг руу маш хурдан шуурхай, аюулгүй тээвэрлэх үйлчилгээ үзүүлдэг Карго юм.
                             </p>
                             <ul className="list-disc list-inside">
                                 <li className='font-bold'>Каргоны үнийн мэдээлэл</li>
                                 <p className="mb-4">
-                                * Бүх төрлийн түүвэр ачаа<br />
-                                * Ууттай ачаа эхний 1кг 2500₮<br />
-                                * Хайрцагтай ачаа эхний 1 кг 3000₮ <br />
-                                * Овор ихтэй хөнгөн ачаа /1m³=650¥/
+                                * 0-с 100гр 1500~2000₮<br />
+                                * Кг- 2500₮<br />
+                                * М3- 400₮ <br />
+                                * Овортой барааг овроор бодно.
                                 </p>
                                 <li className='font-bold'>Карго холбох заавар: </li>
                                 <p className="mb-4">
-                                - Хүлээн авагч / 收货人:<br />
-                                奥奇物流 - Энэ ханзыг хуулж оруулна<br />
-                                - Утасны дугаар / 手机号码:<br />
-                                13214791668 - Хуулж оруулна<br />
-                                - Mуж / 省份:<br />
-                                内蒙古自治区 - Цэснээс сонгоно<br />
-                                - Аймаг / 地区:<br />
-                                锡林郭勒盟 - Цэснээс сонгоно<br />
-                                - Хот / 城市:<br />
-                                二连浩特市 - Цэснээс сонгоно<br />
-                                - Дүүрэг / 街道:<br />
-                                二连浩特市社区建设管理局 - Цэснээс сонгоно<br />
-                                - Дэлгэрэнгүй хаяг / 详细地址:<br />
-                                利众物流G2—7号 奥奇物流 - Хуулж оруулна (Өөрийн нэр утасны дугаар бичнэ)
+                                1-р мөр Ховд экспресс <br />
+                                2-р мөр 18747467880<br />
+                                3-р мөр 内蒙古自治区锡林郭勒盟二连浩特市 <br />
+                                4-р мөр 义乌南门兔喜快递超市1号 ( нэр дугаар TA )<br />
                                 </p>
                             </ul>
                         </div>
@@ -162,7 +152,7 @@ export default function Home() {
                                     return (
                                         <div
                                             key={index}
-                                            className={`w-full flex items-center justify-between p-4 border border-[#FDA600] border-solid rounded-md md:h-[64px] ${result?.properties?.Status?.status?.name === "Хүлээн авсан" ? ' bg-[#333D47]' : 'bg-[#000000]'} my-1`}
+                                            className={`w-full flex items-center justify-between p-4 border border-[#3B82F6] border-solid rounded-md md:h-[64px] ${result?.properties?.Status?.status?.name === "Хүлээн авсан" ? ' bg-[#333D47]' : 'bg-[#000000]'} my-1`}
                                         >
                                             <div className="flex md:flex-row flex-col gap-1 md:gap-[100px]">
                                                 <div className="text-[#FFFFFF] flex items-center gap-2">
@@ -180,7 +170,7 @@ export default function Home() {
                                             </div>
 
                                             <div>
-                                                <div className={`col-span-1 flex items-center gap-1 ${iActive ? "bg-[transparent]" : "bg-[#FDA600]"} rounded p-2 px-5`}>
+                                                <div className={`col-span-1 flex items-center gap-1 ${iActive ? "bg-[transparent]" : "bg-[#3B82F6]"} rounded p-2 px-5`}>
                                                     <div className="text-[#ffffff] font-medium text-l">
                                                         {!iActive
                                                             ? Number(result.properties?.Price?.number ?? "0").toLocaleString() + ' ₮' || '정보 없음'
@@ -208,7 +198,7 @@ export default function Home() {
                 <footer className="w-full flex text-white py-5 items-center justify-center">
                     <div className="flex items-center mx-auto gap-4">
                         <a
-                            href="https://www.facebook.com/profile.php?id=61561245556651"
+                            href="https://www.facebook.com/groups/569847415823661/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-blue-500 hover:text-blue-600"
@@ -227,7 +217,7 @@ export default function Home() {
 
                         <div className="flex flex-col items-start gap-2">
                             <p className="text-sm font-bold">Холбоо барих</p>
-                            <p className="text-sm font-bold">Утасны дугаар: +97690861026, +97688646003</p>
+                            <p className="text-sm font-bold">Утасны дугаар: 95641302, 95533501</p>
                         </div>
                     </div>
                 </footer>
